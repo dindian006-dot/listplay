@@ -1,6 +1,140 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Download, Shield, Play, Music, BrainCircuit, Github, Smartphone, FastForward, Repeat, Library, Palette, UserX, Ghost, Database, ArrowLeftRight, Trash2, Lock } from 'lucide-react';
+import { 
+  Download, Shield, Play, Music, BrainCircuit, Github, Smartphone, FastForward, Repeat, 
+  Library, Palette, UserX, Ghost, Database, ArrowLeftRight, Trash2, Lock,
+  Search, User, MoreVertical, SkipBack, SkipForward, Shuffle, History, ListVideo, Heart
+} from 'lucide-react';
+
+const PhoneMockup = ({ children }: { children: React.ReactNode }) => (
+  <div className="w-[280px] h-[580px] border-[8px] border-[#111] rounded-[40px] bg-[#000] relative shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] overflow-hidden shrink-0">
+    <div className="absolute top-0 inset-x-0 h-6 bg-[#111] w-36 mx-auto rounded-b-2xl z-20" />
+    <div className="w-full h-full relative z-10 flex flex-col">
+       {children}
+    </div>
+  </div>
+);
+
+const YoutubeHome = () => (
+  <div className="flex flex-col h-full bg-[#0a0a0a] text-white p-4 pt-10">
+    <div className="flex justify-between items-center mb-6">
+      <div className="flex items-center gap-1.5 font-bold tracking-tight"><Play size={16} fill="white"/> Listplay</div>
+      <div className="flex gap-4 opacity-80"><Search size={18} /><User size={18} /></div>
+    </div>
+    <div className="flex gap-2 mb-6 overflow-hidden">
+      <div className="px-3 py-1 bg-white text-black rounded-lg text-xs font-semibold whitespace-nowrap">All</div>
+      <div className="px-3 py-1 bg-white/10 rounded-lg text-xs font-medium whitespace-nowrap">Music</div>
+      <div className="px-3 py-1 bg-white/10 rounded-lg text-xs font-medium whitespace-nowrap">Mixes</div>
+      <div className="px-3 py-1 bg-white/10 rounded-lg text-xs font-medium whitespace-nowrap">Live</div>
+    </div>
+    <div className="flex flex-col gap-6">
+      <div>
+        <div className="w-full aspect-video bg-gradient-to-br from-white/10 to-transparent rounded-xl mb-3 relative overflow-hidden group">
+           <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover opacity-60" alt="Video thumbnail" />
+           <div className="absolute bottom-1.5 right-1.5 bg-black/80 px-1.5 py-0.5 text-[9px] font-mono rounded">45:20</div>
+        </div>
+        <div className="flex gap-3">
+          <div className="w-8 h-8 rounded-full bg-elegant-accent/20 shrink-0 border border-elegant-accent/30" />
+          <div>
+            <div className="text-sm font-semibold leading-tight line-clamp-2 mb-1">Lofi Chill Beats - Music to stress over code with</div>
+            <div className="text-[11px] text-white/50">SyntaxFM • 1.2M views • 1 day ago</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className="w-full aspect-video bg-white/5 rounded-xl mb-3 relative overflow-hidden">
+           <img src="https://images.unsplash.com/photo-1493225457124-a1a2a5956093?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover opacity-60" alt="Video thumbnail" />
+           <div className="absolute bottom-1.5 right-1.5 bg-black/80 px-1.5 py-0.5 text-[9px] font-mono rounded">12:15</div>
+        </div>
+        <div className="flex gap-3">
+          <div className="w-8 h-8 rounded-full bg-indigo-500/20 shrink-0 border border-indigo-500/30" />
+          <div>
+            <div className="text-sm font-semibold leading-tight line-clamp-2 mb-1">Minimal Desk Setup Tour 2026</div>
+            <div className="text-[11px] text-white/50">TechLife • 45K views • 2 hours ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const MusicHome = () => (
+   <div className="flex flex-col h-full bg-[#050505] text-white p-5 pt-10">
+      <div className="flex justify-between items-center mb-8">
+         <div className="text-[10px] font-bold tracking-widest text-elegant-accent uppercase">Now Playing</div>
+         <MoreVertical size={16} className="opacity-50" />
+      </div>
+      <div className="w-full aspect-square bg-gradient-to-br from-elegant-accent to-pink-600 rounded-[32px] mb-8 shadow-2xl relative shadow-elegant-accent/20 flex items-center justify-center overflow-hidden">
+         <div className="absolute inset-0 bg-black/20" />
+         <Music size={64} className="text-white/60 relative z-10 drop-shadow-lg" />
+      </div>
+      <div className="text-center mb-8">
+         <div className="text-xl font-bold mb-1">Midnight City</div>
+         <div className="text-xs text-white/50">M83 • Hurry Up, We're Dreaming</div>
+      </div>
+      <div className="h-1 bg-white/10 rounded-full mb-8 relative cursor-pointer">
+         <div className="absolute left-0 top-0 h-full bg-elegant-accent w-[65%] rounded-full shadow-[0_0_10px_rgba(242,125,38,0.5)]">
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow" />
+         </div>
+         <div className="absolute top-2 left-0 text-[9px] text-white/40">2:45</div>
+         <div className="absolute top-2 right-0 text-[9px] text-white/40">4:03</div>
+      </div>
+      <div className="flex justify-between items-center px-2 mt-4">
+         <Shuffle size={18} className="text-white/40 hover:text-white transition-colors cursor-pointer"/>
+         <SkipBack size={24} className="hover:text-elegant-accent transition-colors cursor-pointer" />
+         <div className="w-16 h-16 bg-white hover:scale-105 transition-transform cursor-pointer rounded-full flex items-center justify-center text-black shadow-lg shadow-white/10">
+            <Play size={24} fill="black" className="ml-1"/>
+         </div>
+         <SkipForward size={24} className="hover:text-elegant-accent transition-colors cursor-pointer" />
+         <Repeat size={18} className="text-white/40 hover:text-white transition-colors cursor-pointer"/>
+      </div>
+   </div>
+);
+
+const LibraryHome = () => (
+   <div className="flex flex-col h-full bg-[#070707] text-white p-5 pt-10">
+      <div className="flex items-center gap-3 mb-8">
+        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center"><User size={16}/></div>
+        <div>
+          <div className="text-xs text-white/50 font-medium">Your Space</div>
+          <div className="text-sm font-bold">Library</div>
+        </div>
+      </div>
+      <div className="flex flex-col gap-5">
+        {[
+          { icon: History, label: "History", sub: "Recent watch activity" },
+          { icon: ListVideo, label: "Playlists", sub: "12 custom lists" },
+          { icon: Download, label: "Downloads", sub: "2.4 GB used for offline" },
+          { icon: Heart, label: "Favorites", sub: "128 videos saved" }
+        ].map((item, i) => (
+          <div key={i} className="flex gap-4 items-center group cursor-pointer">
+             <div className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/[0.05] flex items-center justify-center text-white/70 group-hover:text-elegant-accent group-hover:bg-elegant-accent/10 transition-all">
+                <item.icon size={20} />
+             </div>
+             <div>
+                <div className="text-sm font-semibold mb-0.5">{item.label}</div>
+                <div className="text-xs text-white/40">{item.sub}</div>
+             </div>
+          </div>
+        ))}
+      </div>
+      <div className="mt-8 pt-6 border-t border-white/10">
+         <div className="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Recent Collections</div>
+         <div className="grid grid-cols-2 gap-3">
+            <div className="aspect-square bg-gradient-to-br from-indigo-500/10 to-indigo-500/5 border border-indigo-500/20 rounded-2xl flex flex-col justify-end p-3 relative overflow-hidden">
+               <div className="absolute right-[-10%] top-[-10%] p-3 bg-indigo-500/20 rounded-full mix-blend-screen"><ListVideo size={40} className="text-indigo-400 opacity-20"/></div>
+               <span className="text-xs font-bold z-10 w-full truncate">Synthwave Mix</span>
+               <span className="text-[10px] text-white/50 z-10 mt-1">24 videos</span>
+            </div>
+            <div className="aspect-square bg-gradient-to-br from-elegant-accent/10 to-elegant-accent/5 border border-elegant-accent/20 rounded-2xl flex flex-col justify-end p-3 relative overflow-hidden">
+               <div className="absolute right-[-10%] top-[-10%] p-3 bg-elegant-accent/20 rounded-full mix-blend-screen"><Heart size={40} className="text-elegant-accent opacity-20"/></div>
+               <span className="text-xs font-bold z-10 w-full truncate">Liked Songs</span>
+               <span className="text-[10px] text-white/50 z-10 mt-1">1,024 tracks</span>
+            </div>
+         </div>
+      </div>
+   </div>
+);
 
 export default function App() {
   return (
@@ -31,7 +165,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col justify-center items-center text-center min-h-[90vh]">
+      <main className="pt-32 pb-20 px-6 max-w-[1400px] mx-auto flex flex-col justify-center items-center text-center">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,7 +199,7 @@ export default function App() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="flex flex-wrap items-center justify-center gap-4"
+          className="flex flex-wrap items-center justify-center gap-4 mb-20"
         >
           <button className="btn-primary px-8 py-4 text-base flex items-center gap-2 hover:shadow-[0_0_30px_rgba(242,125,38,0.4)] transition-all">
             <Download size={20} />
@@ -77,22 +211,49 @@ export default function App() {
           </button>
         </motion.div>
 
+        {/* 3 Screens Mockup */}
         <motion.div
            initial={{ opacity: 0, scale: 0.95 }}
            animate={{ opacity: 1, scale: 1 }}
            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-           className="mt-20 relative w-full max-w-4xl rounded-3xl p-[1px] bg-gradient-to-b from-white/20 to-transparent"
+           className="w-full flex justify-center perspective-[1200px]"
         >
-           <div className="bg-black/80 backdrop-blur-3xl rounded-[23px] overflow-hidden aspect-video border border-white/5 relative flex items-center justify-center">
-             <div className="absolute w-[400px] h-[400px] bg-elegant-accent/10 rounded-full blur-[100px]" />
-             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618336753974-aae8e04506aa?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-30 mix-blend-screen" />
-             <Play size={80} className="text-white opacity-80" fill="currentColor" />
-           </div>
+          {/* Desktop Row of 3 mockups */}
+          <div className="hidden lg:flex w-full justify-center items-center relative h-[650px]">
+             {/* Left: YouTube Home */}
+             <div className="absolute left-[50%] -translate-x-[150%] z-0 transform-gpu rotate-y-[15deg] rotate-z-[-2deg] translate-z-[-50px] scale-[0.85] opacity-60 hover:opacity-100 hover:scale-90 hover:rotate-y-[5deg] transition-all duration-700 ease-out">
+                <PhoneMockup><YoutubeHome /></PhoneMockup>
+             </div>
+             
+             {/* Center: Music Player */}
+             <div className="absolute left-[50%] -translate-x-[50%] z-20 scale-100 transform-gpu translate-y-[-20px] transition-all duration-500 hover:scale-[1.02]">
+                <PhoneMockup><MusicHome /></PhoneMockup>
+             </div>
+
+             {/* Right: Library */}
+             <div className="absolute left-[50%] translate-x-[50%] z-0 transform-gpu -rotate-y-[15deg] rotate-z-[2deg] translate-z-[-50px] scale-[0.85] opacity-60 hover:opacity-100 hover:scale-90 hover:-rotate-y-[5deg] transition-all duration-700 ease-out">
+                <PhoneMockup><LibraryHome /></PhoneMockup>
+             </div>
+          </div>
+
+          {/* Mobile/Tablet Swipeable List */}
+          <div className="flex lg:hidden overflow-x-auto gap-6 px-10 pb-16 snap-x snap-mandatory hide-scrollbars max-w-[100vw]">
+             <div className="snap-center shrink-0">
+               <PhoneMockup><YoutubeHome /></PhoneMockup>
+             </div>
+             <div className="snap-center shrink-0 drop-shadow-2xl">
+               <PhoneMockup><MusicHome /></PhoneMockup>
+             </div>
+             <div className="snap-center shrink-0">
+               <PhoneMockup><LibraryHome /></PhoneMockup>
+             </div>
+          </div>
         </motion.div>
       </main>
 
       {/* Engine Section */}
       <section id="neuro" className="py-32 relative">
+
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
