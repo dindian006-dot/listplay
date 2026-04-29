@@ -4,7 +4,7 @@ import {
   Download, Shield, Play, Music, BrainCircuit, Github, Smartphone, FastForward, Repeat, 
   Library, Palette, UserX, Ghost, Database, ArrowLeftRight, Trash2, Lock,
   Search, User, MoreVertical, SkipBack, SkipForward, Shuffle, History, ListVideo, Heart,
-  Coffee, Code
+  Coffee, Code, Sun, Moon
 } from 'lucide-react';
 
 const PhoneMockup = ({ children }: { children: React.ReactNode }) => (
@@ -19,7 +19,7 @@ const PhoneMockup = ({ children }: { children: React.ReactNode }) => (
 const YoutubeHome = () => (
   <div className="flex flex-col h-full bg-[#0a0a0a] text-white p-4 pt-10">
     <div className="flex justify-between items-center mb-6">
-      <div className="flex items-center gap-1.5 font-bold tracking-tight"><Play size={16} fill="white"/> Listplay</div>
+      <div className="flex items-center gap-1.5 font-bold tracking-tight"><Play size={16} className="fill-black dark:fill-white"/> Listplay</div>
       <div className="flex gap-4 opacity-80"><Search size={18} /><User size={18} /></div>
     </div>
     <div className="flex gap-2 mb-6 overflow-hidden">
@@ -144,22 +144,24 @@ export default function App() {
       <div className="atmosphere" />
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 glass-card !rounded-none !border-t-0 !border-l-0 !border-r-0 border-b border-white/10 px-4 md:px-6 py-4 flex justify-between items-center">
-        <div className="text-lg md:text-xl font-bold tracking-tighter uppercase flex items-center gap-2">
-          <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-white flex items-center justify-center">
-            <Play size={14} fill="black" stroke="black" className="ml-0.5 md:ml-1" />
+      <nav className="fixed top-0 w-full z-50 glass-card !rounded-none !border-t-0 !border-l-0 !border-r-0 border-b border-white/10 px-4 md:px-6 py-4 flex flex-wrap justify-between items-center gap-y-4">
+        <div className="text-lg md:text-xl font-bold tracking-tighter uppercase flex items-center gap-2 order-1">
+          <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-white flex items-center justify-center shrink-0">
+            <Play size={14} className="fill-white stroke-white dark:fill-black dark:stroke-black ml-0.5 md:ml-1" />
           </div>
-          Listplay
+          <span className="truncate max-w-[100px] sm:max-w-none">Listplay</span>
         </div>
-        <div className="hidden lg:flex gap-8 text-xs font-semibold uppercase tracking-widest text-white/50">
-          <a href="#features" className="hover:text-white transition">Features</a>
-          <a href="#neuro" className="hover:text-white transition">FlowNeuro Engine</a>
-          <a href="#privacy" className="hover:text-white transition">Privacy</a>
-          <a href="#about" className="hover:text-white transition">About</a>
+        
+        <div className="flex justify-center overflow-x-auto hide-scrollbars flex-nowrap gap-4 md:gap-8 text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-white/50 order-3 lg:order-2 w-full lg:w-auto pt-2 border-t border-white/10 lg:border-t-0 lg:pt-0 pb-1 lg:pb-0">
+          <a href="#features" className="hover:text-white transition whitespace-nowrap">Features</a>
+          <a href="#neuro" className="hover:text-white transition whitespace-nowrap">FlowNeuro Engine</a>
+          <a href="#privacy" className="hover:text-white transition whitespace-nowrap">Privacy</a>
+          <a href="#about" className="hover:text-white transition whitespace-nowrap">About</a>
         </div>
+
         <a 
           href="#download"
-          className="btn-primary flex items-center gap-2 text-xs md:text-sm px-4 md:px-8 py-2 md:py-3"
+          className="btn-primary flex items-center gap-2 text-xs md:text-sm px-4 md:px-8 py-2 md:py-3 order-2 lg:order-3 shrink-0"
         >
           <Download size={16} />
           <span className="hidden sm:inline">Get APK</span>
@@ -207,10 +209,6 @@ export default function App() {
           <button className="btn-primary w-full sm:w-auto px-8 py-4 text-sm md:text-base flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(242,125,38,0.4)] transition-all">
             <Download size={20} />
             Download APK
-          </button>
-          <button className="glass-card w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-xs tracking-widest uppercase flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
-            <Github size={20} />
-            Source Code
           </button>
         </motion.div>
 
@@ -260,7 +258,7 @@ export default function App() {
           <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
-                Meet <span className="text-elegant-accent nebula-text">FlowNeuro</span>.
+                Meet <span className="text-elegant-accent nebula-text">Listplay</span>.
               </h2>
               <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed font-light">
                 Most open-source clients give you playback but no way to discover new content. We give you both. The recommendation engine learns what you like by analyzing your watch behavior—100% locally.
@@ -409,7 +407,7 @@ export default function App() {
               </p>
               <div className="flex items-center gap-4 pt-4 border-t border-white/10">
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-tr from-[#111] to-[#333] border border-white/20 flex items-center justify-center font-bold text-lg shrink-0">
-                  <Code size={20} className="text-white/70" />
+                  <Code size={20} className="text-black/70 dark:text-white/70" />
                 </div>
                 <div>
                   <div className="font-bold text-white tracking-wide text-sm md:text-base">dindian <span className="text-elegant-accent mx-1">X</span> A-EDev</div>
@@ -449,7 +447,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
           <div className="text-lg md:text-xl font-bold tracking-tighter uppercase flex items-center gap-2">
             <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-white flex items-center justify-center">
-              <Play size={10} fill="black" stroke="black" className="ml-0.5" />
+              <Play size={10} className="fill-white stroke-white dark:fill-black dark:stroke-black ml-0.5" />
             </div>
             Listplay
           </div>
