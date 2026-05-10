@@ -7,6 +7,7 @@ import {
   Coffee, Code, Sun, Moon,
   Bell, Settings, Home, PlaySquare, ArrowLeft, RefreshCw, EyeOff, Timer
 } from 'lucide-react';
+import musicScreen from '../music.png';
 
 const PhoneMockup = ({ children }: { children: React.ReactNode }) => (
   <div className="w-[280px] h-[580px] border-[8px] border-[#111] rounded-[40px] bg-[#000] relative shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] overflow-hidden shrink-0">
@@ -20,7 +21,7 @@ const PhoneMockup = ({ children }: { children: React.ReactNode }) => (
 const YoutubeHome = () => (
   <div className="flex flex-col h-full bg-[#111] text-white">
     {/* Header */}
-    <div className="flex justify-between items-center px-4 py-3 bg-[#0f0f0f] shrink-0">
+    <div className="flex justify-between items-center px-4 pt-8 pb-3 bg-[#0f0f0f] shrink-0">
       <div className="font-bold text-lg tracking-tight">LISTPLAY</div>
       <div className="flex items-center gap-4">
         <Search size={20} />
@@ -220,7 +221,7 @@ const MusicHome = () => (
 const LibraryHome = () => (
   <div className="flex flex-col h-full bg-[#111] text-white">
      {/* Header */}
-     <div className="flex justify-between items-center px-4 py-4 shrink-0 top-0 sticky z-20 bg-[#111]/90 backdrop-blur-sm">
+     <div className="flex justify-between items-center px-4 pt-8 pb-4 shrink-0 top-0 sticky z-20 bg-[#111]/90 backdrop-blur-sm">
         <div className="flex items-center gap-4">
            <ArrowLeft size={24} />
            <h1 className="font-bold text-xl tracking-wide">Pengaturan</h1>
@@ -392,7 +393,7 @@ export default function App() {
              
              {/* Center: Music Player */}
              <div className="absolute left-[50%] -translate-x-[50%] z-20 scale-[1.05] xl:scale-[1.1] transform-gpu translate-y-[-20px] transition-all duration-500 hover:scale-[1.15]">
-                <PhoneMockup><MusicHome /></PhoneMockup>
+                <PhoneMockup><div className="w-full h-full bg-[#0a0a0a] pt-8 flex flex-col"><img src={musicScreen} className="w-full flex-1 object-cover" alt="Music" /></div></PhoneMockup>
              </div>
 
              {/* Right: Library */}
@@ -407,7 +408,7 @@ export default function App() {
                <PhoneMockup><YoutubeHome /></PhoneMockup>
              </div>
              <div className="snap-center shrink-0 w-[260px] sm:w-[280px] drop-shadow-2xl">
-               <PhoneMockup><MusicHome /></PhoneMockup>
+               <PhoneMockup><div className="w-full h-full bg-[#0a0a0a] pt-8 flex flex-col"><img src={musicScreen} className="w-full flex-1 object-cover" alt="Music" /></div></PhoneMockup>
              </div>
              <div className="snap-center shrink-0 w-[260px] sm:w-[280px]">
                <PhoneMockup><LibraryHome /></PhoneMockup>
