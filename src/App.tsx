@@ -650,11 +650,8 @@ export default function App() {
               Aman dan tanpa pelacakan.
             </p>
             <a 
-              href="#" 
-              onClick={() => {
-                alert("Proses download APK dimulai...");
-                setShowModal(false);
-              }}
+              href="https://github.com/dindian006-dot/Listplay/releases/download/v1.0.0/listplay.apk" 
+              onClick={() => setShowModal(false)}
               className="btn-primary w-full py-3 text-sm font-bold flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(242,125,38,0.4)] transition-all"
             >
               <Download size={18} />
