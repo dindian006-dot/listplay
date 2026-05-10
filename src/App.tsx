@@ -8,6 +8,7 @@ import {
   Bell, Settings, Home, PlaySquare, ArrowLeft, RefreshCw, EyeOff, Timer
 } from 'lucide-react';
 import musicScreen from '../music.png';
+import listplayLogo from '../listplay.png';
 
 const PhoneMockup = ({ children }: { children: React.ReactNode }) => (
   <div className="w-[280px] h-[580px] border-[8px] border-[#111] rounded-[40px] bg-[#000] relative shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] overflow-hidden shrink-0">
@@ -311,9 +312,7 @@ export default function App() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass-card !rounded-none !border-t-0 !border-l-0 !border-r-0 border-b border-white/10 px-4 md:px-6 py-4 flex flex-wrap justify-between items-center gap-y-4">
         <div className="text-lg md:text-xl font-bold tracking-tighter uppercase flex items-center gap-2 order-1">
-          <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-white flex items-center justify-center shrink-0">
-            <Play size={14} className="fill-white stroke-white dark:fill-black dark:stroke-black ml-0.5 md:ml-1" />
-          </div>
+          <img src={listplayLogo} alt="Listplay Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain shrink-0 rounded-full" />
           <span className="truncate max-w-[100px] sm:max-w-none">Listplay</span>
         </div>
         
@@ -611,9 +610,7 @@ export default function App() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[1px] bg-gradient-to-r from-transparent via-elegant-accent to-transparent opacity-30" />
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
           <div className="text-lg md:text-xl font-bold tracking-tighter uppercase flex items-center gap-2">
-            <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-white flex items-center justify-center">
-              <Play size={10} className="fill-white stroke-white dark:fill-black dark:stroke-black ml-0.5" />
-            </div>
+            <img src={listplayLogo} alt="Listplay Logo" className="w-6 h-6 md:w-8 md:h-8 object-contain shrink-0 rounded-full" />
             Listplay
           </div>
           <div className="text-xs md:text-sm text-gray-500">
