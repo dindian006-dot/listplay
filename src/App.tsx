@@ -5,7 +5,7 @@ import {
   Library, Palette, UserX, Ghost, Database, ArrowLeftRight, Trash2, Lock,
   Search, User, MoreVertical, SkipBack, SkipForward, Shuffle, History, ListVideo, Heart,
   Coffee, Code, Sun, Moon,
-  Bell, Settings, Home, PlaySquare, ArrowLeft, RefreshCw, EyeOff, Timer
+  Bell, Settings, Home, PlaySquare, ArrowLeft, RefreshCw, EyeOff, Timer, X
 } from 'lucide-react';
 import musicScreen from '../music.png';
 import listplayLogo from '../listplay.png';
@@ -304,6 +304,8 @@ const LibraryHome = () => (
 );
 
 export default function App() {
+  const [showModal, setShowModal] = React.useState(false);
+
   return (
     <div className="min-h-screen relative font-sans text-gray-200">
       {/* Atmosphere Background */}
@@ -323,14 +325,14 @@ export default function App() {
           <a href="#about" className="hover:text-white transition whitespace-nowrap">About</a>
         </div>
 
-        <a 
-          href="#download"
+        <button 
+          onClick={() => setShowModal(true)}
           className="btn-primary flex items-center gap-2 text-xs md:text-sm px-4 md:px-8 py-2 md:py-3 order-2 lg:order-3 shrink-0"
         >
           <Download size={16} />
           <span className="hidden sm:inline">Get APK</span>
           <span className="inline sm:hidden">Download</span>
-        </a>
+        </button>
       </nav>
 
       {/* Hero Section */}
@@ -370,7 +372,10 @@ export default function App() {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 mb-16 md:mb-20 w-full sm:w-auto px-4"
         >
-          <button className="btn-primary w-full sm:w-auto px-8 py-4 text-sm md:text-base flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(242,125,38,0.4)] transition-all">
+          <button 
+            onClick={() => setShowModal(true)}
+            className="btn-primary w-full sm:w-auto px-8 py-4 text-sm md:text-base flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(242,125,38,0.4)] transition-all"
+          >
             <Download size={20} />
             Download APK
           </button>
@@ -621,6 +626,43 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Download Modal */}
+      {showModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="glass-card w-full max-w-sm p-6 relative flex flex-col items-center text-center shadow-2xl border border-white/20"
+          >
+            <button 
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition"
+            >
+              <X size={20} />
+            </button>
+            <div className="w-16 h-16 rounded-full bg-elegant-accent/10 flex items-center justify-center mb-4 text-elegant-accent">
+              <Download size={32} />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-2">Download Listplay</h3>
+            <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+              Required Android version 4.0 ke atas. <br/>
+              Aman dan tanpa pelacakan.
+            </p>
+            <a 
+              href="#" 
+              onClick={() => {
+                alert("Proses download APK dimulai...");
+                setShowModal(false);
+              }}
+              className="btn-primary w-full py-3 text-sm font-bold flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(242,125,38,0.4)] transition-all"
+            >
+              <Download size={18} />
+              Unduh Sekarang
+            </a>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }
