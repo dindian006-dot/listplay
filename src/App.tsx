@@ -632,12 +632,12 @@ export default function App() {
             <div className="absolute inset-0 bg-gradient-to-br from-rose-600/20 via-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 p-7 md:p-8">
               <div className="w-16 h-16 rounded-2xl mb-5 flex items-center justify-center overflow-hidden bg-transparent shadow-[0_8px_24px_rgba(239,68,68,0.4)] group-hover:shadow-[0_12px_32px_rgba(239,68,68,0.6)] transition-shadow">
-                <img src={layarfilmLogo} className="w-full h-full object-cover" alt="YarFilm" />
+                <img src={layarfilmLogo} className="w-full h-full object-cover" alt="LayarFilm" />
               </div>
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-[10px] font-bold uppercase tracking-widest bg-rose-500/20 text-rose-400 px-2 py-1 rounded-full border border-rose-500/20">Video Streaming</span>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">YarFilm</h3>
+              <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">LayarFilm</h3>
               <p className="text-gray-400 text-sm leading-relaxed font-light mb-4">
                 A premium movie and series streaming experience. Discover thousands of titles in HD quality with a sleek, ad-free interface designed for cinephiles.
               </p>
