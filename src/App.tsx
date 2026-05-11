@@ -649,14 +649,16 @@ export default function App() {
               Required Android version 4.0 ke atas. <br/>
               Aman dan tanpa pelacakan.
             </p>
-            <a 
-              href="https://github.com/dindian006-dot/Listplay/releases/download/v1.0.0/listplay.apk" 
-              onClick={() => setShowModal(false)}
+            <button
+              onClick={() => {
+                setShowModal(false);
+                window.location.href = "https://github.com/dindian006-dot/Listplay/releases/download/v1.0.0/listplay.apk";
+              }}
               className="btn-primary w-full py-3 text-sm font-bold flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(242,125,38,0.4)] transition-all"
             >
               <Download size={18} />
               Unduh Sekarang
-            </a>
+            </button>
           </motion.div>
         </div>
       )}
