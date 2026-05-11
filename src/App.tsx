@@ -9,6 +9,9 @@ import {
 } from 'lucide-react';
 import musicScreen from '../music.png';
 import listplayLogo from '../listplay.png';
+import layarfilmLogo from '../layarfilm.png';
+import musictunelUniversalLogo from '../musictunel universal.png';
+import musictunelLiteLogo from '../musictunel lite.png';
 
 const PhoneMockup = ({ children }: { children: React.ReactNode }) => (
   <div className="w-[280px] h-[580px] border-[8px] border-[#111] rounded-[40px] bg-[#000] relative shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] overflow-hidden shrink-0">
@@ -628,16 +631,17 @@ export default function App() {
           <div className="group relative glass-card overflow-hidden rounded-3xl hover:border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
             <div className="absolute inset-0 bg-gradient-to-br from-rose-600/20 via-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 p-7 md:p-8">
-              <div className="w-16 h-16 rounded-2xl mb-5 flex items-center justify-center bg-gradient-to-br from-rose-500 to-orange-600 shadow-[0_8px_24px_rgba(239,68,68,0.4)] group-hover:shadow-[0_12px_32px_rgba(239,68,68,0.6)] transition-shadow">
-                <Play size={28} className="text-white" />
+              <div className="w-16 h-16 rounded-2xl mb-5 flex items-center justify-center overflow-hidden bg-transparent shadow-[0_8px_24px_rgba(239,68,68,0.4)] group-hover:shadow-[0_12px_32px_rgba(239,68,68,0.6)] transition-shadow">
+                <img src={layarfilmLogo} className="w-full h-full object-cover" alt="YarFilm" />
               </div>
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-[10px] font-bold uppercase tracking-widest bg-rose-500/20 text-rose-400 px-2 py-1 rounded-full border border-rose-500/20">Video Streaming</span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">YarFilm</h3>
-              <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
+              <p className="text-gray-400 text-sm leading-relaxed font-light mb-4">
                 A premium movie and series streaming experience. Discover thousands of titles in HD quality with a sleek, ad-free interface designed for cinephiles.
               </p>
+              <a href="https://layarfilm.cloud" target="_blank" rel="noopener noreferrer" className="text-elegant-accent text-xs font-semibold hover:underline mb-6 inline-block">layarfilm.cloud</a>
               <div className="flex flex-wrap gap-2">
                 {["No Ads", "HD Quality", "Offline Mode"].map(tag => (
                   <span key={tag} className="text-[10px] font-semibold bg-white/5 border border-white/10 text-white/60 px-3 py-1 rounded-full">{tag}</span>
@@ -651,17 +655,18 @@ export default function App() {
           <div className="group relative glass-card overflow-hidden rounded-3xl hover:border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
             <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 via-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 p-7 md:p-8">
-              <div className="w-16 h-16 rounded-2xl mb-5 flex items-center justify-center bg-gradient-to-br from-violet-500 to-purple-700 shadow-[0_8px_24px_rgba(139,92,246,0.4)] group-hover:shadow-[0_12px_32px_rgba(139,92,246,0.6)] transition-shadow">
-                <Music size={28} className="text-white" />
+              <div className="w-16 h-16 rounded-2xl mb-5 flex items-center justify-center overflow-hidden bg-white shadow-[0_8px_24px_rgba(139,92,246,0.4)] group-hover:shadow-[0_12px_32px_rgba(139,92,246,0.6)] transition-shadow">
+                <img src={musictunelUniversalLogo} className="w-full h-full object-contain p-2" alt="MusicTunel Universal" />
               </div>
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-[10px] font-bold uppercase tracking-widest bg-violet-500/20 text-violet-400 px-2 py-1 rounded-full border border-violet-500/20">Music Player</span>
                 <span className="text-[10px] font-bold uppercase tracking-widest bg-elegant-accent/20 text-elegant-accent px-2 py-1 rounded-full border border-elegant-accent/20">Universal</span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">MusicTunel Universal</h3>
-              <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
+              <p className="text-gray-400 text-sm leading-relaxed font-light mb-4">
                 The full-featured music experience. Stream, download, and manage your entire library with AI-powered recommendations, lyrics sync, and cross-device support.
               </p>
+              <a href="https://musictunel.com" target="_blank" rel="noopener noreferrer" className="text-elegant-accent text-xs font-semibold hover:underline mb-6 inline-block">musictunel.com</a>
               <div className="flex flex-wrap gap-2">
                 {["AI Recs", "Lyrics Sync", "Hi-Res Audio"].map(tag => (
                   <span key={tag} className="text-[10px] font-semibold bg-white/5 border border-white/10 text-white/60 px-3 py-1 rounded-full">{tag}</span>
@@ -675,19 +680,20 @@ export default function App() {
           <div className="group relative glass-card overflow-hidden rounded-3xl hover:border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
             <div className="absolute inset-0 bg-gradient-to-br from-sky-600/20 via-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 p-7 md:p-8">
-              <div className="w-16 h-16 rounded-2xl mb-5 flex items-center justify-center bg-gradient-to-br from-sky-400 to-cyan-600 shadow-[0_8px_24px_rgba(14,165,233,0.4)] group-hover:shadow-[0_12px_32px_rgba(14,165,233,0.6)] transition-shadow">
-                <FastForward size={28} className="text-white" />
+              <div className="w-16 h-16 rounded-2xl mb-5 flex items-center justify-center overflow-hidden bg-black border border-white/10 shadow-[0_8px_24px_rgba(14,165,233,0.4)] group-hover:shadow-[0_12px_32px_rgba(14,165,233,0.6)] transition-shadow">
+                <img src={musictunelLiteLogo} className="w-full h-full object-contain p-2" alt="MusicTunel Lite" />
               </div>
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-[10px] font-bold uppercase tracking-widest bg-sky-500/20 text-sky-400 px-2 py-1 rounded-full border border-sky-500/20">Music Player</span>
                 <span className="text-[10px] font-bold uppercase tracking-widest bg-white/10 text-white/50 px-2 py-1 rounded-full border border-white/10">Lite</span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">MusicTunel Lite</h3>
-              <p className="text-gray-400 text-sm leading-relaxed font-light mb-6">
-                Lightweight, blazing-fast, and under 10MB. Designed for low-end devices and users who want a clean, distraction-free music experience without the extras.
+              <p className="text-gray-400 text-sm leading-relaxed font-light mb-4">
+                Lightweight, blazing-fast, and under 25MB. Designed for low-end devices and users who want a clean, distraction-free music experience without the extras.
               </p>
+              <a href="https://musictunel.com" target="_blank" rel="noopener noreferrer" className="text-elegant-accent text-xs font-semibold hover:underline mb-6 inline-block">musictunel.com</a>
               <div className="flex flex-wrap gap-2">
-                {["Under 10MB", "Low RAM", "Battery Saver"].map(tag => (
+                {["Under 25MB", "Low RAM", "Battery Saver"].map(tag => (
                   <span key={tag} className="text-[10px] font-semibold bg-white/5 border border-white/10 text-white/60 px-3 py-1 rounded-full">{tag}</span>
                 ))}
               </div>
